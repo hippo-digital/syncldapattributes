@@ -102,7 +102,7 @@
 				  <archive>
 					<manifest>
 						<!-- Jar file entry point -->
-						<mainClass>com.southdevon.trust.ldapconnector.LDAPConnector</mainClass>
+						<mainClass>com.southdevon.trust.ldapconnector.LdapAttributeSynchroniser</mainClass>
 					</manifest>
 				  </archive>
 				</configuration>
