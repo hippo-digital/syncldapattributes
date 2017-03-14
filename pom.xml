@@ -89,25 +89,27 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
-
-			<!-- Make this jar executable -->
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
+			   <groupId>org.apache.maven.plugins</groupId>
+			   <artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
-				  <!-- DO NOT include log4j.properties file in your Jar -->
-				  <excludes>
-					<exclude>**/log4j.properties</exclude>
-				  </excludes>
-				  <archive>
-					<manifest>
-						<!-- Jar file entry point -->
-						<mainClass>com.southdevon.trust.ldapconnector.LdapAttributeSynchroniser</mainClass>
-					</manifest>
-				  </archive>
+						<descriptorRefs>
+							<descriptorRef>jar-with-dependencies</descriptorRef>
+						</descriptorRefs>
+						<archive>
+							<manifest>
+								<mainClass>com.southdevon.trust.ldapconnector.LdapAttributeSynchroniser</mainClass>
+							</manifest>
+						</archive>
 				</configuration>
+				<executions>
+					<execution><phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
-
 		</plugins>
 	</build>
 </project>
