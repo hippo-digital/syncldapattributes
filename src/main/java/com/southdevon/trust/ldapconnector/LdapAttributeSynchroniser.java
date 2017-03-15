@@ -69,6 +69,8 @@ public class LdapAttributeSynchroniser {
 		}
 		
 		logger.info("Completed processing of LDAP Records at "+sdf.format(date));
+		
+		System.exit(0);
 	}
 
 	/**
